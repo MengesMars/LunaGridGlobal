@@ -1,13 +1,8 @@
 from tkinter import *
 import tkinter as tk
 import numpy as np
-#import pandas as pd
-import matplotlib.pyplot as plt
 import cv2 as cv
 import math
-#from PIL import Image, ImageTk
-#from concurrent.futures import ThreadPoolExecutor
-#from tqdm import tqdm
 
 im = cv.imread('Moon_LRO_LROC-WAC_Mosaic_global_1024.jpg')
 height, width = im.shape[0:2]
@@ -19,8 +14,21 @@ newminlat = -90
 newmaxlat = 90
 newlatrange = newmaxlat-newminlat
 
-RECT_WIDTH_KM = 100  # Site rectangle width in km.
-RECT_HT_KM = 100  # Site rectangle height in km.
+while True:
+    try:
+        RECT_WIDTH_KM = input("Grid Cell Width (km): ")  # Site rectangle width in km.
+        RECT_WIDTH_KM = float(RECT_WIDTH_KM)
+        break
+    except ValueError:
+        print("Error: Enter valid float value: ")
+while True:
+    try:
+        RECT_HT_KM = input("Grid Cell Height (km): ")  # Site rectangle height in km.
+        RECT_HT_KM = float(RECT_HT_KM)
+        break
+    except ValueError:
+        print("Error: Enter valid float value: ")
+
 a = 1738.1 #eq radius km
 b = 1736.0 #pol radius km
 IMG_WIDTH_EXTENT=2*a*math.pi*(newlonrange/360)
@@ -40,7 +48,6 @@ pixlat = height
 while LAT<MAX_LAT:
     LAT+=rect_ht_deg2
     pixlat-=rect_pix
-    #print(LAT,pixlat)
 MAX_LAT=LAT-rect_ht_deg2
 pixlat = int(pixlat+rect_pix)
 

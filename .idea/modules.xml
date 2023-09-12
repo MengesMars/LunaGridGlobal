@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/global grid butcher.iml" filepath="$PROJECT_DIR$/.idea/global grid butcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GridMoonGlobal.iml" filepath="$PROJECT_DIR$/.idea/GridMoonGlobal.iml" />
     </modules>
   </component>
 </project>
